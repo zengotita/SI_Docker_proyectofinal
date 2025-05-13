@@ -1,0 +1,13 @@
+services:
+  vue:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - VITE_API_SERVER=${VITE_API_SERVER}
+    hostname: vue
+    init: true
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./app:/app
